@@ -14,7 +14,7 @@ const logger = winston.createLogger({
                 timestamp, 
                 correlationId: getCorrelationId(), 
                 data 
-            };
+            }; 
             return JSON.stringify(output);
         })
     ),

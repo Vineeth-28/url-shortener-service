@@ -1,27 +1,20 @@
+import mongoose, { Document, Schema} from 'mongoose';
 
-import mongoose from "mongoose";
-import { Document ,Schema } from "mongoose";
-
-export interface IUrl extends Document{
-
-    OriginalUrl: string,
-    ShortUrl:string,
-    Clicks: number ,
-    createdAt: Date,
-    UpdateAt: Date,
+export interface IUrl extends Document {
+    originalUrl: string;
+    shortUrl: string;
+    clicks: number;
+    createdAt: Date;
+    updatedAt: Date;
 }
 
-const UrlSchema = new Schema<IUrl>({
-    OriginalUrl: {type:String , required:true},
-    ShortUrl :{ type:String , required:true ,unique:true ,index:true},
-    Clicks:{
-        type:Number , default:0
-    }
 
-},{timestamps:true})
+const urlSchema = new Schema<IUrl>({
+    originalUrl: { type: String, required: true },
+    shortUrl: { type: String, required: true, unique: true, index: true },
+    clicks: { type: Number, default: 0 }
+}, { timestamps: true });
 
-UrlSchema.index({createdAt: -1});
-//UrlSchema.index({shortUrl: 1});
+urlSchema.index({ createdAt: -1});
 
-export const Url = mongoose.model<IUrl>("Url", UrlSchema);
-
+export const Url = mongoose.model<IUrl>('Url', urlSchema);
