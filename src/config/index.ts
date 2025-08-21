@@ -16,9 +16,9 @@ function loadEnv() {
 loadEnv();
 
 export const serverConfig: ServerConfig = {
-    PORT: Number(process.env.PORT) || 3001,
+    PORT: Number(process.env.PORT) ||7777,
     MONGO_URI: process.env.MONGO_URI || "mongodb://localhost:27017/short_my_url",
     REDIS_URL: process.env.REDIS_URL || "redis://localhost:6379",
     REDIS_COUNTER_KEY: process.env.REDIS_COUNTER_KEY || "url_shortener_counter",
-    BASE_URL: process.env.BASE_URL || "http://localhost:3001"
+    BASE_URL: process.env.BASE_URL || "http://localhost:7777"
 };
