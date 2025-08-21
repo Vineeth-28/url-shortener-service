@@ -1,7 +1,3 @@
-
-
-
-
 # @vineet/url-shortener-service
 
 [![npm version](https://img.shields.io/npm/v/@vineet/url-shortener-service)](https://www.npmjs.com/package/@vineet/url-shortener-service)
@@ -63,9 +59,9 @@ import { UrlShortenerService } from "@vineet/url-shortener-service";
 
 const service = new UrlShortenerService({
   port: 3000,
-  mongoUri: "mongodb://localhost:27017/urlshortener",
+  mongoUri: "mongodb://localhost:27017/your-database-name",
   redisUri: "redis://localhost:6379",
-  baseUrl: "https://yourdomain.com"
+  baseUrl: "https://your-domain.com"
 });
 
 // Start the server
@@ -75,14 +71,16 @@ console.log("🚀 URL Shortener Service is running on port 3000");
 
 ### With Environment Variables
 
-```typescript
-// .env file
+```bash
+# .env file
 PORT=3000
-MONGO_URI=mongodb://localhost:27017/urlshortener
+MONGO_URI=mongodb://localhost:27017/your-database-name
 REDIS_URI=redis://localhost:6379
-BASE_URL=https://yourdomain.com
+BASE_URL=https://your-domain.com
 NODE_ENV=production
+```
 
+```typescript
 // app.js
 import { startServer } from "@vineet/url-shortener-service";
 
@@ -98,7 +96,7 @@ startServer(); // Automatically loads from .env
 **GET** `/ping`
 
 ```bash
-curl https://yourdomain.com/ping
+curl https://your-domain.com/ping
 ```
 
 **Response:**
@@ -127,7 +125,7 @@ const result = await client.url.create.mutate({
 
 **HTTP Request:**
 ```bash
-curl -X POST https://yourdomain.com/trpc/url.create \
+curl -X POST https://your-domain.com/trpc/url.create \
   -H "Content-Type: application/json" \
   -d '{"originalUrl": "https://www.example.com/very/long/path"}'
 ```
@@ -136,7 +134,7 @@ curl -X POST https://yourdomain.com/trpc/url.create \
 ```json
 {
   "shortUrl": "abc123",
-  "fullUrl": "https://yourdomain.com/abc123",
+  "fullUrl": "https://your-domain.com/abc123",
   "originalUrl": "https://www.example.com/very/long/path",
   "createdAt": "2025-08-21T10:00:00.000Z",
   "clickCount": 0
@@ -158,7 +156,7 @@ const result = await client.url.getOriginalUrl.query({
 
 **HTTP Request:**
 ```bash
-curl "https://yourdomain.com/trpc/url.getOriginalUrl?input={%22shortUrl%22:%22abc123%22}"
+curl "https://your-domain.com/trpc/url.getOriginalUrl?input={%22shortUrl%22:%22abc123%22}"
 ```
 
 **Response:**
@@ -207,7 +205,7 @@ const analytics = await client.url.getAnalytics.query({
 **GET** `/:shortUrl`
 
 ```bash
-curl -L https://yourdomain.com/abc123
+curl -L https://your-domain.com/abc123
 # Automatically redirects to: https://www.example.com/very/long/path
 ```
 
@@ -244,15 +242,15 @@ const service = new UrlShortenerService({
   host: "0.0.0.0",
   
   // Database config
-  mongoUri: "mongodb://localhost:27017/urlshortener",
-  redisUri: "redis://localhost:6379",
+  mongoUri: process.env.MONGO_URI,
+  redisUri: process.env.REDIS_URI,
   
   // App config
-  baseUrl: "https://yourdomain.com",
+  baseUrl: process.env.BASE_URL,
   
   // Optional advanced config
   cors: {
-    origin: ["https://yourfrontend.com"],
+    origin: ["https://your-frontend-domain.com"],
     credentials: true
   },
   
@@ -297,7 +295,7 @@ import type { AppRouter } from "@vineet/url-shortener-service";
 const client = createTRPCClient<AppRouter>({
   links: [
     httpBatchLink({
-      url: "https://yourdomain.com/trpc"
+      url: "https://your-api-domain.com/trpc"
     })
   ]
 });
@@ -505,13 +503,13 @@ Monitor service health:
 
 ```bash
 # Basic health check
-curl https://yourdomain.com/ping
+curl https://your-domain.com/ping
 
 # Database connectivity
-curl https://yourdomain.com/health/db
+curl https://your-domain.com/health/db
 
 # Redis connectivity  
-curl https://yourdomain.com/health/redis
+curl https://your-domain.com/health/redis
 ```
 
 ---
@@ -585,9 +583,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - MONGO_URI=mongodb://mongo:27017/urlshortener
+      - MONGO_URI=mongodb://mongo:27017/url_shortener
       - REDIS_URI=redis://redis:6379
-      - BASE_URL=https://yourdomain.com
+      - BASE_URL=https://your-domain.com
     depends_on:
       - mongo
       - redis
@@ -609,9 +607,6 @@ volumes:
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md).
 
 ### Development Setup
 
@@ -623,6 +618,10 @@ cd url-shortener-service
 # Install dependencies
 npm install
 
+# Copy environment template
+cp .env.example .env
+# Edit .env with your configuration
+
 # Start development services
 docker-compose up -d mongo redis
 
@@ -633,9 +632,7 @@ npm run dev
 npm test
 ```
 
-### Commit Convention
 
-We follow [Conventional Commits](https://conventionalcommits.org/):
 
 ```bash
 feat: add batch URL creation endpoint
@@ -661,8 +658,8 @@ MIT © 2025 [Vineeth](https://github.com/Vineeth-28) | Follow on [Twitter](https
 
 ## 📞 Support & Connect
 
-- **GitHub Issues:** [Report bugs or request features](https://github.com/Vineeth-28/url-shortener-service.git/issues)
-- **GitHub Repository:** [View source code](https://github.com/Vineeth-28/url-shortener-service.git)
+- **GitHub Issues:** [Report bugs or request features](https://github.com/Vineeth-28/url-shortener-service/issues)
+- **GitHub Repository:** [View source code](https://github.com/Vineeth-28/url-shortener-service)
 - **Developer Profile:** [Vineeth's GitHub](https://github.com/Vineeth-28)
 - **Follow on Twitter:** [@vineetprak25565](https://x.com/vineetprak25565)
 

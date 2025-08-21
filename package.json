@@ -1,6 +1,6 @@
 {
   "name": "@veeinmaking/url-shortener-service",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A URL shortener backend using Node.js, Express, TRPC, MongoDB, and Redis.",
   "author": "",
   "license": "ISC",
