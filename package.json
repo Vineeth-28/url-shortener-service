@@ -1,31 +1,73 @@
 {
-  "name": "expresstypescripttemplate",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "ts-node src/server.ts",
-    "dev": "nodemon src/server.ts"
-  },
-  "keywords": [],
+  "name": "@veeinmaking/url-shortener-service",
+  "version": "1.0.1",
+  "description": "A URL shortener backend using Node.js, Express, TRPC, MongoDB, and Redis.",
   "author": "",
   "license": "ISC",
-  "description": "",
+  "keywords": [
+    "url",
+    "shortener",
+    "express",
+    "trpc",
+    "mongodb",
+    "redis",
+    "typescript",
+    "rollup"
+  ],
+
+
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/types/index.d.ts",
+
+
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+
+  "scripts": {
+    "clean": "rm -rf dist",
+    "dev": "nodemon src/server.ts",
+    "build": "rollup -c",
+    "build:types": "tsc --emitDeclarationOnly",
+    "watch": "rollup -c -w",
+    "start": "node dist/index.cjs",
+    "preview": "npm run build && node dist/index.cjs"
+  },
+
+
   "dependencies": {
     "@trpc/server": "^11.4.4",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "mongoose": "^8.17.1",
     "redis": "^5.8.1",
+    "tslib": "^2.8.1",
     "uuid": "^11.1.0",
     "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0",
     "zod": "^3.24.2"
   },
+
   "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-typescript": "^7.27.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.4",
     "@types/express": "^5.0.1",
     "@types/node": "^22.14.0",
     "nodemon": "^3.1.9",
+    "rollup": "^4.47.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
-  }
+    "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+  "access": "public"
+}
 }

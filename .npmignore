@@ -1,0 +1,28 @@
+# dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# build & config
+rollup.config.js
+rollup.config.mjs
+tsconfig.json
+.eslintrc.js
+.prettierrc
+babel.config.js
+
+# env & secrets
+.env
+.env.local
+*.pem
+
+# dev files
+tests/
+__tests__/
+coverage/
+scripts/
+
+# editor/OS files
+.DS_Store
+.idea
+.vscode
