@@ -1,6 +1,6 @@
 {
   "name": "@veeinmaking/url-shortener-service",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A URL shortener backend using Node.js, Express, TRPC, MongoDB, and Redis.",
   "author": "",
   "license": "ISC",
@@ -14,19 +14,14 @@
     "typescript",
     "rollup"
   ],
-
-
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/types/index.d.ts",
-
-
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
-
   "scripts": {
     "clean": "rm -rf dist",
     "dev": "nodemon src/server.ts",
@@ -36,8 +31,6 @@
     "start": "node dist/index.cjs",
     "preview": "npm run build && node dist/index.cjs"
   },
-
-
   "dependencies": {
     "@trpc/server": "^11.4.4",
     "dotenv": "^16.4.7",
@@ -50,7 +43,6 @@
     "winston-daily-rotate-file": "^5.0.0",
     "zod": "^3.24.2"
   },
-
   "devDependencies": {
     "@babel/core": "^7.28.3",
     "@babel/preset-env": "^7.28.3",
@@ -68,6 +60,6 @@
     "typescript": "^5.9.2"
   },
   "publishConfig": {
-  "access": "public"
-}
+    "access": "public"
+  }
 }

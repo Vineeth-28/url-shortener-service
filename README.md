@@ -661,8 +661,8 @@ MIT © 2025 [Vineeth](https://github.com/Vineeth-28) | Follow on [Twitter](https
 
 ## 📞 Support & Connect
 
-- **GitHub Issues:** [Report bugs or request features](https://github.com/Vineeth-28/url-shortener-service/issues)
-- **GitHub Repository:** [View source code](https://github.com/Vineeth-28/url-shortener-service)
+- **GitHub Issues:** [Report bugs or request features](https://github.com/Vineeth-28/url-shortener-service.git/issues)
+- **GitHub Repository:** [View source code](https://github.com/Vineeth-28/url-shortener-service.git)
 - **Developer Profile:** [Vineeth's GitHub](https://github.com/Vineeth-28)
 - **Follow on Twitter:** [@vineetprak25565](https://x.com/vineetprak25565)
 
