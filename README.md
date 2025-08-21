@@ -1,9 +1,17 @@
+
+
+
+
 # @vineet/url-shortener-service
 
 [![npm version](https://img.shields.io/npm/v/@vineet/url-shortener-service)](https://www.npmjs.com/package/@vineet/url-shortener-service)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Vineeth-28/url-shortener-service/ci.yml?branch=main)](https://github.com/Vineeth-28/url-shortener-service/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/types-TypeScript-blue)](https://www.typescriptlang.org/)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen)](https://nodejs.org/)
+[![Issues](https://img.shields.io/github/issues/Vineeth-28/url-shortener-service)](https://github.com/Vineeth-28/url-shortener-service/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/Vineeth-28/url-shortener-service)](https://github.com/Vineeth-28/url-shortener-service/commits/main)
+[![Twitter Follow](https://img.shields.io/twitter/follow/vineetprak25565?style=social)](https://x.com/vineetprak25565)
 
 A **production-ready URL Shortener Service** built with **Node.js, Express, tRPC, MongoDB, and Redis**.  
 This package provides a complete backend service for creating, managing, and tracking short URLs with advanced caching and analytics support.
@@ -609,7 +617,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md).
 
 ```bash
 # Clone the repo
-git clone https://github.com/vineet/url-shortener-service
+git clone https://github.com/Vineeth-28/url-shortener-service
 cd url-shortener-service
 
 # Install dependencies
@@ -639,7 +647,7 @@ docs: update API documentation
 
 ## 📄 License
 
-MIT © 2025 Vineet
+MIT © 2025 [Vineeth](https://github.com/Vineeth-28) | Follow on [Twitter](https://x.com/vineetprak25565)
 
 ---
 
@@ -651,12 +659,13 @@ MIT © 2025 Vineet
 
 ---
 
-## 📞 Support
+## 📞 Support & Connect
 
-- **GitHub Issues:** [Report bugs or request features](https://github.com/vineet/url-shortener-service/issues)
-- **Documentation:** [Full API docs](https://vineet.github.io/url-shortener-service)
-- **Email:** support@vineet.dev
+- **GitHub Issues:** [Report bugs or request features](https://github.com/Vineeth-28/url-shortener-service/issues)
+- **GitHub Repository:** [View source code](https://github.com/Vineeth-28/url-shortener-service)
+- **Developer Profile:** [Vineeth's GitHub](https://github.com/Vineeth-28)
+- **Follow on Twitter:** [@vineetprak25565](https://x.com/vineetprak25565)
 
 ---
 
-**Star ⭐ this repo if it helped you!**
+**⭐ Star this repo if it helped you! Follow for more awesome projects! 🚀**
