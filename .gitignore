@@ -1,4 +1,44 @@
+# Node dependencies
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
 dist/
+build/
+.cache/
+.tmp/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment files
 .env
-logs/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+*.log.*
+*.out
+*.err
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Optional: lock files if you don't want them in repo (for libs)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
